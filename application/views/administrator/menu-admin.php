@@ -100,6 +100,7 @@
 
 
             <li><a href="<?php echo base_url(); ?>administrator/slide_fotos"><i class="fa fa-camera"></i> <span>Slide Fotos</span></a></li>
+            <li><a href="<?php echo base_url(); ?>administrator/akreditasi"><i class="fa fa-th"></i> <span>Akreditasi</span></a></li>
             <li><a href="<?php echo base_url(); ?>administrator/edit_manajemenuser/<?php echo $this->session->username; ?>"><i class="fa fa-user"></i> <span>Edit Profile</span></a></li>
             <li><a href="<?php echo base_url(); ?>administrator/logout"><i class="fa fa-power-off"></i> <span>Logout</span></a></li>
           </ul>
