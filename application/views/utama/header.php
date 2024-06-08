@@ -133,6 +133,14 @@
                             <li> <a href="<?= base_url() ?>artikel/artikel_all/HIMASYA">HIMASYA</a></li>
                         </ul>
                     </li>
+                    <li <?= $this->uri->segment(1) == "akreditasi"  ? "class='drop-down nav-link active'" : "class='drop-down nav-link'" ?>>
+                        <a href="#">Artikel</a>
+                        <ul>
+                            <li> <a href="<?= base_url() ?>akreditasi/akreditasi_all/APT">APT</a></li>
+                            <li> <a href="<?= base_url() ?>akreditasi/akreditasi_all/PAI">PAI</a></li>
+                            <li> <a href="<?= base_url() ?>akreditasi/akreditasi_all/HES">HES</a></li>
+                        </ul>
+                    </li>
                     <li <?= $this->uri->segment(2) == "pendaftaran"  ? "class='nav-link active'" : "class='nav-link'" ?>>
                         <a href="https://pmb.stainaa.ac.id">Pendaftaran</a>
                     </li>
