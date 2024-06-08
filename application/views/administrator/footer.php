@@ -1,0 +1,1 @@
+<strong>Copyright &copy; 2016 - <?php echo date('Y'); ?> <a target='_BLANK' href="https://members.phpmu.com"> Portal Kampus</a>.</strong> All rights reserved. 

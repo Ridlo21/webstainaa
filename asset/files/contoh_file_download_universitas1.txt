@@ -1,0 +1,32 @@
+Input nilai dari (akademik) - Terminologi laboratorium - landbouw
+modul absensi mhs dari akademik - 
+NE32 tidak bisa menyimpan - mercubktijaya
+export excel rekap uang rutin - akbid dan stikes alifah.
+export excel rekap IPK - 
+mercubaktijaya
+tambahkan modul kelola admin BAU - stiesumbar
+
+tambah modul user LPM - 
+unitas
+Tambah Bahan Kuliah -> List Bahan Kuliah
+Tombol tambah dibagian ini dengan memilih lokal untuk upload 
+winada stok 
+obat nitral
+
+-----------------------------------------------------------------------------------
+
+selesai
+-----------------------------------------------------------------------------------
+
+Status aktif transaksi Pembayaran - keuangan saat insert - stiesumbar -->
+ 1
+di KRS tambahkan kondisi OR status == Y (contohkan Mahasiswa 2013)
+mahasiswa di krs dan khs, tapi kartu ujian muncul - 
+cek foto.
+stiesumbar - (1)
+update master_nilai - MAx SKS 24
+akademik - rpt absen kuliah tampilkan nama mata pelajaran, dll - 
+samakan dgn mercu
+absen ujian dan absen kuliah max 25
+
+
