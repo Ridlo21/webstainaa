@@ -1846,6 +1846,89 @@ class Administrator extends CI_Controller
 		redirect($this->uri->segment(1) . '/dosen_tetap');
 	}
 
+	// Model Controller Akreditasi
+
+	public function akreditasi()
+	{
+		cek_session_admin();
+		$data['record'] = $this->model_akreditasi->viewAll();
+		$this->template->load('administrator/template', 'administrator/mod_akreditasi/view_akreditasi', $data);
+	}
+
+	function tambah_akreditasi()
+	{
+		cek_session_admin();
+		if (isset($_POST['submit'])) {
+			$data = array(
+				'fakultas' => $this->input->post('a'),
+				'noButir' => $this->input->post('b'),
+			);
+			$this->model_app->insert('tb_akreditasi', $data);
+			redirect('administrator/akreditasi');
+		} else {
+			$data['record'] = $this->db->get_where('tb_akreditasi');
+			$this->template->load('administrator/template', 'administrator/mod_akreditasi/view_akreditasi_tambah', $data);
+		}
+	}
+
+
+	function edit_akreditasi()
+	{
+		$id = $this->uri->segment(3);
+		if (isset($_POST['submit'])) {
+			$data = array(
+				'fakultas' => $this->input->post('a'),
+				'noButir' => $this->input->post('b'),
+			);
+			$where = array('id_akreditasi' => $this->input->post('id'));
+			$this->model_app->update('tb_akreditasi', $data, $where);
+			redirect('administrator/akreditasi');
+		} else {
+			$proses = $this->model_app->edit('tb_akreditasi', array('id_akreditasi' => $id))->row_array();
+			$u = $this->db->from('tb_akreditasi')->get();
+			$data = array('rows' => $proses, 'record' => $u);
+			$this->template->load('administrator/template', 'administrator/mod_akreditasi/view_akreditasi_edit', $data);
+		}
+	}
+
+	function hapus_akreditasi()
+	{
+		cek_session_admin();
+		$id = array('id_akreditasi' => $this->uri->segment(3));
+		$this->model_app->delete('tb_akreditasi', $id);
+		redirect($this->uri->segment(1) . '/akreditasi');
+	}
+
+	function setting_akreditasi() {
+		$id = $this->uri->segment(3);
+		$proses = $this->model_app->edit('tb_akreditasi', array('id_akreditasi' => $id))->row_array();
+		$u = $this->model_akreditasi->detail_akreditasi_all($id);
+		$data = array('rows' => $proses, 'record' => $u);
+		$this->template->load('administrator/template', 'administrator/mod_akreditasi/view_setting_akreditasi', $data);
+	}
+
+	function tambah_detail_akreditasi() {
+		cek_session_admin();
+		if (isset($_POST['submit'])) {
+			$data = array(
+				'link' => $this->input->post('a'),
+				'keterangan' => $this->input->post('b'),
+				'id_akreditasi' => $this->input->post('id'),
+			);
+			$this->model_app->insert('tb_detail_akreditasi', $data);
+			redirect('administrator/setting_akreditasi/'.$this->input->post('id').'');
+		} 
+	}
+
+	function hapus_detail_akreditasi()
+	{
+		cek_session_admin();
+		$t = $this->uri->segment(4);
+		$id = array('id_detail' => $this->uri->segment(3));
+		$this->model_app->delete('tb_detail_akreditasi', $id);
+		redirect($this->uri->segment(1) . '/setting_akreditasi'.'/'.$t);
+	}
+
 	function delete_pesanmasuk()
 	{
 		cek_session_admin();
